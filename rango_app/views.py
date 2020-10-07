@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.template import RequestContext
 
 def index(request):
-    return HttpResponse("Rango says fuck you!")
+    return render(request, 'index.html')
 
 def about_us(request):
     return render(request, 'info.html')
