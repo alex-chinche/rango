@@ -1,15 +1,18 @@
 import os
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Base Directory
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 print("El directorio base es", BASE_DIR)
 
+#App Stuff
+APP_DIR = os.path.join(BASE_DIR, 'rango_app')
+
 #Media Stuff
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(APP_DIR, 'media')
 MEDIA_URL = '/media/'
 
 # Static Stuff
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(APP_DIR, 'static')
 STATIC_URL = '/static/'
 
 # Quick-start development settings - unsuitable for production
@@ -51,7 +54,7 @@ ROOT_URLCONF = 'rango_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(APP_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
