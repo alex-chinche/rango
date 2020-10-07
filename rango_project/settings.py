@@ -2,7 +2,7 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-print(BASE_DIR)
+print("El directorio base es", BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -104,7 +104,7 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'rango_app')
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'rango_project/media')
+STATIC_ROOT = os.path.join((BASE_DIR), 'rango_app/static')
+MEDIA_ROOT = os.path.join((BASE_DIR), 'media')
 MEDIA_URL = '/media/' 
 
