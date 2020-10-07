@@ -8,7 +8,7 @@ print("El directorio base es", BASE_DIR)
 APP_DIR = os.path.join(BASE_DIR, 'rango_app')
 
 #Media Stuff
-MEDIA_ROOT = os.path.join(APP_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 # Static Stuff
