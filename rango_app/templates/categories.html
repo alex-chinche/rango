@@ -1,0 +1,9 @@
+{% if categories %}
+    {% for c in categories %}
+        {% if c == current_category %}
+            {{ c.name }}
+        {% endif %}
+    {% endfor %}
+{% else %}
+    There are no categories present.
+{% endif %}
