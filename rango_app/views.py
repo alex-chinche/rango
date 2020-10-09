@@ -70,7 +70,7 @@ def add_page(request, slug):
                 page.views = 0
                 page.save()
 
-                return redirect(reverse('show_category',
+                return redirect(reverse('rango_app:show_category',
                                         kwargs={'slug':
                                                 slug}))
         else:
@@ -81,5 +81,5 @@ def add_page(request, slug):
     return render(request, 'add_page.html', context=context_dict)
 
 
-def about_us(request):
+def about(request):
     return render(request, 'info.html')

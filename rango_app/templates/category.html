@@ -1,29 +1,34 @@
 <!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
 <html>
+{% block title_block %}
+    {% if category %}
+        {{ category.name }}
+    {% else %}
+        Unknown Category
+    {% endif %}
+{% endblock %}
 
-<head>
-    <title>Rango</title>
-</head>
-
-<body>
-    <div>
-        {% if category %}
+{% block body_block %}
+    {% if category %}
         <h1>{{ category.name }}</h1>
         {% if pages %}
-        <ul>
-            {% for page in pages %}
-            <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-            {% endfor %}
-        </ul>
+            <ul>
+                {% for page in pages %}
+                    <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                {% endfor %}
+            </ul>
         {% else %}
-        <strong>No pages currently in category.</strong>
-        <br><br>
-        {% endif %}
-        <a href="/category/{{ category.slug }}/add_page">Add Page</a> <br/>
+            <strong>No pages currently in category.</strong>
+            <br><br>
+    {% endif %}
+
+        <a href="/category/{{ category.slug }}/add_page/">Add Page</a> <br/>
         {% else %}
         <strong>The specified category does not exist.</strong>
         {% endif %}
-    </div>
-</body>
+{% endblock %}
 
 </html>

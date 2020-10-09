@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+    <head>
+        <title>
+            Rango -
+            {% block title_block %}
+               How to Tango with Django!
+            {% endblock %}
+        </title>
+    </head>
+    <body>
+        <div>
+        {% block body_block %}
+        {% endblock %}
+        </div>
+        <hr/>
+        <div>
+            <ul>
+                <li><a href="/add_category">Add category</a><br></li>
+                <li> <a href="/about">About Rango</a><br></li>
+                <li><a href="/">Index</a><br></li>
+            </ul>
+        </div>
+    </body>
+</html>
