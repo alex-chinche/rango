@@ -1,8 +1,11 @@
 {% if categories %}
     <ul class="nav nav-sidebar">
     {% for c in categories %}
-        <li><a href="/category/{{ c.slug }}">{{ c.name }}</a></li>
-        <br>
+        <ul>
+            <li><a href="/category/{{ c.slug }}">{{ c.name }}</a></li>
+            <br>
+        </ul>
+
     {% endfor %}
 {% else %}
         <li> <strong >There are no category present.</strong></li>
