@@ -2,6 +2,7 @@
 {% load static %}
 {% load rango_template_tags %}
 
+
 <html>
     <head>
         <title>
@@ -13,12 +14,13 @@
     </head>
     <body>
         <div>
-        {% block body_block %}
-        {% endblock %}
+            {% block body_block %}
+            {% endblock %}
         </div>
-        {% block sidebar_block %}
-            {% get_category_list categories %}
-        {% endblock %}
+        <hr>
+            {% block sidebar_block %}
+                {% get_category_list %}
+            {% endblock %}
         <hr/>
         <div>
             <ul>
