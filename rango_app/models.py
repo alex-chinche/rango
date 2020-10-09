@@ -9,7 +9,7 @@ class Category(models.Model):
     slug = models.SlugField(unique=True)
 
     def save(self, *args, **kwargs):
-        self.url = slugify(self.name)
+        self.slug = slugify(self.name)
         super(Category, self).save(*args, **kwargs)
 
     class Meta:
